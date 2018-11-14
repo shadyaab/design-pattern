@@ -28,6 +28,11 @@ class Vehicle implements CloneVehicle{
 	public Object clone() {
 		return new Vehicle(this);
 	}
+	
+	//This can be used to clone
+	public Object clone1() {
+		return new Vehicle(this.capacity, this.price, this.color, this.isFuelInjector);
+	}
 
 	public int getCapacity() {
 		return capacity;
