@@ -78,16 +78,13 @@ public class TestDecorator {
 		pizza = new Jalapeno(pizza);
 		System.out.println(pizza.getDescription() + " And Price : "+ pizza.getPrice());
 		
-		//Adding sinle topping
+		//Adding single topping
 		Pizza pizza2 = new Corn(new SimplePizza("Simple Pizza"));
 		System.out.println(pizza2.getDescription() + " And Price : "+ pizza2.getPrice());
 		
-		//Adding multiple toppings
+		//Adding multiple topping
 		Pizza pizza3 = new Corn(new Jalapeno(new SimplePizza("Simple Pizza")));
 		System.out.println(pizza3.getDescription() + " And Price : "+ pizza3.getPrice());
 		
 	}
-	
-	
-
 }
