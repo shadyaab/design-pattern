@@ -1,4 +1,4 @@
-package net.sady.designpattern.abstractfactory;
+package net.sady.designpattern.creational.abstractfactory;
 
 abstract class Vehicle{
 	abstract public int getPrice();

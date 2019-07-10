@@ -1,4 +1,4 @@
-package net.sady.designpattern.singleton;
+package net.sady.designpattern.creational.singleton;
 
 //Known as Bill Plugh Singleton Implementation
 public class InnerClassSingletonMethod {

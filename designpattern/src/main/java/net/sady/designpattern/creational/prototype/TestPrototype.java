@@ -1,4 +1,4 @@
-package net.sady.designpattern.prototype;
+package net.sady.designpattern.creational.prototype;
 
 interface CloneVehicle{
 

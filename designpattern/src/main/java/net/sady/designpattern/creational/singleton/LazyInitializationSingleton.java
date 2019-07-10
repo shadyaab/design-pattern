@@ -1,4 +1,4 @@
-package net.sady.designpattern.singleton;
+package net.sady.designpattern.creational.singleton;
 
 public class LazyInitializationSingleton {
 	

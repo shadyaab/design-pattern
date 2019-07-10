@@ -1,4 +1,4 @@
-package net.sady.designpattern.builder;
+package net.sady.designpattern.creational.builder;
 
 class Verna{
 	
