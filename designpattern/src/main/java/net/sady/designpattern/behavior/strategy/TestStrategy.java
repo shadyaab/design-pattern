@@ -3,11 +3,9 @@ package net.sady.designpattern.behavior.strategy;
 import java.util.ArrayList;
 import java.util.List;
 
-
 /**
- * Strategy pattern is used when we have multiple 
- * algorithm for a specific task and client decides 
- * the actual implementation to be used at runtime
+ * Strategy pattern is used when we have multiple algorithm for a specific task
+ * and client decides the actual implementation to be used at runtime
  * 
  * @author shadyaab
  *
@@ -67,30 +65,30 @@ class Item {
 	public int getPrice() {
 		return price;
 	}
-	
+
 }
 
 class ShoppingCart {
 
 	List<Item> items = null;
-	
-	public ShoppingCart(){
+
+	public ShoppingCart() {
 		this.items = new ArrayList<>();
 	}
-	
-	public void addItem(Item item){
+
+	public void addItem(Item item) {
 		this.items.add(item);
 	}
-	
-	public int calculateTotalPrice(){
+
+	public int calculateTotalPrice() {
 		int sum = 0;
-		for(Item item: items){
+		for (Item item : items) {
 			sum += item.getPrice();
 		}
 		return sum;
 	}
-	
-	public void pay(PaymentStrategy strategy){
+
+	public void pay(PaymentStrategy strategy) {
 		int amount = calculateTotalPrice();
 		strategy.pay(amount);
 	}
@@ -100,28 +98,12 @@ public class TestStrategy {
 
 	public static void main(String[] args) {
 		ShoppingCart cart = new ShoppingCart();
-		
+
 		cart.addItem(new Item("Washing Machine", 20000));
 		cart.addItem(new Item("TV", 15000));
-		
+
 		cart.pay(new PaypalPaymentStrategy("sady@gmail.com", "password"));
-		
-		
+
 	}
-	
-	
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
