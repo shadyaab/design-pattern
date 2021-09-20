@@ -1,14 +1,18 @@
 package net.sady.designpattern.behavior.command;
 
-import java.io.File;
-
 interface FileExecutor {
     void openFile();
+
     void writeFile();
+
     void closeFile();
 }
 
-class FileExecutorImpl implements FileExecutor{
+interface Command {
+    void execute();
+}
+
+class FileExecutorImpl implements FileExecutor {
 
     @Override
     public void openFile() {
@@ -24,10 +28,6 @@ class FileExecutorImpl implements FileExecutor{
     public void closeFile() {
         System.out.println("Closed File");
     }
-}
-
-interface Command {
-    void execute();
 }
 
 class OpenFileCommand implements Command {
@@ -48,7 +48,7 @@ class WriteFileCommand implements Command {
 
     FileExecutor fileExecutor = null;
 
-    WriteFileCommand(FileExecutor fileExecutor){
+    WriteFileCommand(FileExecutor fileExecutor) {
         this.fileExecutor = fileExecutor;
     }
 
@@ -60,9 +60,11 @@ class WriteFileCommand implements Command {
 
 class Invoker {
     Command command = null;
-    public Invoker (Command command){
+
+    public Invoker(Command command) {
         this.command = command;
     }
+
     public void execute() {
         this.command.execute();
     }
